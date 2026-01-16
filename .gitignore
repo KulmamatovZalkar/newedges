@@ -1,0 +1,42 @@
+# Environment
+.env
+*.env.local
+
+# Python
+*.pyc
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+*.so
+.venv/
+venv/
+env/
+ENV/
+
+# Django
+db.sqlite3
+*.sqlite3
+staticfiles/
+media/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+*.log
+
+# Migrations (keep in git, but ignore pycache)
+**/migrations/__pycache__/
+
+# Backups
+*.bak
+*.backup

@@ -1,0 +1,61 @@
+name: novye_grani_bot
+
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: ng_bot_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-bot_db}
+      POSTGRES_USER: ${POSTGRES_USER:-bot_user}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-bot_user} -d ${POSTGRES_DB:-bot_db}" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  django:
+    build: ./django_app
+    container_name: ng_bot_django
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      - DATABASE_URL=postgres://${POSTGRES_USER:-bot_user}:${DB_PASSWORD}@db:5432/${POSTGRES_DB:-bot_db}
+      - SECRET_KEY=${SECRET_KEY}
+      - DEBUG=${DEBUG:-0}
+      - ALLOWED_HOSTS=${ALLOWED_HOSTS:-localhost,127.0.0.1}
+      - DJANGO_SUPERUSER_USERNAME=${DJANGO_SUPERUSER_USERNAME:-admin}
+      - DJANGO_SUPERUSER_EMAIL=${DJANGO_SUPERUSER_EMAIL:-admin@example.com}
+      - DJANGO_SUPERUSER_PASSWORD=${DJANGO_SUPERUSER_PASSWORD:-admin123}
+    volumes:
+      - django_data:/app/.data
+      - media_data:/app/media
+      - static_data:/app/staticfiles
+
+  bot:
+    build: ./telegram_bot
+    container_name: ng_bot_telegram
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+      django:
+        condition: service_started
+    environment:
+      - BOT_TOKEN=${BOT_TOKEN}
+      - DATABASE_URL=postgres://${POSTGRES_USER:-bot_user}:${DB_PASSWORD}@db:5432/${POSTGRES_DB:-bot_db}
+    volumes:
+      - media_data:/app/media
+
+volumes:
+  postgres_data:
+  media_data:
+  static_data:
+  django_data:

@@ -1,0 +1,194 @@
+[
+    {
+        "model": "bot_admin.question",
+        "pk": 1,
+        "fields": {
+            "order": 1,
+            "question_type": "text",
+            "text": "Напишите ваше ФИО, пожалуйста:",
+            "choices": null,
+            "image": "",
+            "field_name": "full_name",
+            "is_required": true,
+            "is_active": true,
+            "created_at": "2026-01-16T12:00:00Z",
+            "updated_at": "2026-01-16T12:00:00Z"
+        }
+    },
+    {
+        "model": "bot_admin.question",
+        "pk": 2,
+        "fields": {
+            "order": 2,
+            "question_type": "text",
+            "text": "Укажи свой адрес (место жительства): область, город, улица, дом, квартира",
+            "choices": null,
+            "image": "",
+            "field_name": "address",
+            "is_required": true,
+            "is_active": true,
+            "created_at": "2026-01-16T12:00:00Z",
+            "updated_at": "2026-01-16T12:00:00Z"
+        }
+    },
+    {
+        "model": "bot_admin.question",
+        "pk": 3,
+        "fields": {
+            "order": 3,
+            "question_type": "text",
+            "text": "Укажи номер телефона",
+            "choices": null,
+            "image": "",
+            "field_name": "phone",
+            "is_required": true,
+            "is_active": true,
+            "created_at": "2026-01-16T12:00:00Z",
+            "updated_at": "2026-01-16T12:00:00Z"
+        }
+    },
+    {
+        "model": "bot_admin.question",
+        "pk": 4,
+        "fields": {
+            "order": 4,
+            "question_type": "text",
+            "text": "Укажи адрес электронной почты (e-mail)",
+            "choices": null,
+            "image": "",
+            "field_name": "email",
+            "is_required": true,
+            "is_active": true,
+            "created_at": "2026-01-16T12:00:00Z",
+            "updated_at": "2026-01-16T12:00:00Z"
+        }
+    },
+    {
+        "model": "bot_admin.question",
+        "pk": 5,
+        "fields": {
+            "order": 5,
+            "question_type": "photo",
+            "text": "Пришли фото главного разворота паспорта",
+            "choices": null,
+            "image": "",
+            "field_name": "passport_main",
+            "is_required": true,
+            "is_active": true,
+            "created_at": "2026-01-16T12:00:00Z",
+            "updated_at": "2026-01-16T12:00:00Z"
+        }
+    },
+    {
+        "model": "bot_admin.question",
+        "pk": 6,
+        "fields": {
+            "order": 6,
+            "question_type": "photo",
+            "text": "Пришли фото разворота паспорта с пропиской",
+            "choices": null,
+            "image": "",
+            "field_name": "passport_registration",
+            "is_required": true,
+            "is_active": true,
+            "created_at": "2026-01-16T12:00:00Z",
+            "updated_at": "2026-01-16T12:00:00Z"
+        }
+    },
+    {
+        "model": "bot_admin.question",
+        "pk": 7,
+        "fields": {
+            "order": 7,
+            "question_type": "photo",
+            "text": "Пришли фото твоего СНИЛС",
+            "choices": null,
+            "image": "",
+            "field_name": "snils",
+            "is_required": true,
+            "is_active": true,
+            "created_at": "2026-01-16T12:00:00Z",
+            "updated_at": "2026-01-16T12:00:00Z"
+        }
+    },
+    {
+        "model": "bot_admin.question",
+        "pk": 8,
+        "fields": {
+            "order": 8,
+            "question_type": "photo",
+            "text": "Пришли фото твоего свидетельства ИНН",
+            "choices": null,
+            "image": "",
+            "field_name": "inn",
+            "is_required": true,
+            "is_active": true,
+            "created_at": "2026-01-16T12:00:00Z",
+            "updated_at": "2026-01-16T12:00:00Z"
+        }
+    },
+    {
+        "model": "bot_admin.question",
+        "pk": 9,
+        "fields": {
+            "order": 9,
+            "question_type": "text",
+            "text": "Какое у тебя семейное положение?",
+            "choices": null,
+            "image": "",
+            "field_name": "marital_status",
+            "is_required": true,
+            "is_active": true,
+            "created_at": "2026-01-16T12:00:00Z",
+            "updated_at": "2026-01-16T12:00:00Z"
+        }
+    },
+    {
+        "model": "bot_admin.question",
+        "pk": 10,
+        "fields": {
+            "order": 10,
+            "question_type": "text",
+            "text": "Есть ли у тебя дети? Сколько?",
+            "choices": null,
+            "image": "",
+            "field_name": "children",
+            "is_required": true,
+            "is_active": true,
+            "created_at": "2026-01-16T12:00:00Z",
+            "updated_at": "2026-01-16T12:00:00Z"
+        }
+    },
+    {
+        "model": "bot_admin.question",
+        "pk": 11,
+        "fields": {
+            "order": 11,
+            "question_type": "text",
+            "text": "Укажи контакты (ФИО и контактный телефон) одного из близких людей",
+            "choices": null,
+            "image": "",
+            "field_name": "emergency_contact",
+            "is_required": true,
+            "is_active": true,
+            "created_at": "2026-01-16T12:00:00Z",
+            "updated_at": "2026-01-16T12:00:00Z"
+        }
+    },
+    {
+        "model": "bot_admin.question",
+        "pk": 12,
+        "fields": {
+            "order": 12,
+            "question_type": "text",
+            "text": "Какую информацию хотел/ла бы добавить о себе?",
+            "choices": null,
+            "image": "",
+            "field_name": "additional_info",
+            "is_required": false,
+            "is_active": true,
+            "created_at": "2026-01-16T12:00:00Z",
+            "updated_at": "2026-01-16T12:00:00Z"
+        }
+    }
+]
