@@ -22,7 +22,7 @@ services:
     container_name: ng_bot_django
     restart: unless-stopped
     ports:
-      - "8000:8000"
+      - "8074:8074"
     depends_on:
       db:
         condition: service_healthy

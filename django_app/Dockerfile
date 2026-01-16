@@ -25,7 +25,7 @@ RUN mkdir -p /app/media /app/staticfiles /app/.data
 RUN python manage.py collectstatic --noinput --clear || true
 
 # Expose port
-EXPOSE 8000
+EXPOSE 8074
 
 # Run entrypoint
 COPY entrypoint.sh /entrypoint.sh

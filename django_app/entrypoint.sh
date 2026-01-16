@@ -73,7 +73,7 @@ fi
 # Start Gunicorn
 echo "Starting Gunicorn on port 8000..."
 exec gunicorn config.wsgi:application \
-    --bind 0.0.0.0:8000 \
+    --bind 0.0.0.0:8074 \
     --workers 2 \
     --threads 4 \
     --timeout 120 \
