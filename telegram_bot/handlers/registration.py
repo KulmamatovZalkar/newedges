@@ -219,6 +219,11 @@ async def process_text_answer(message: Message, state: FSMContext):
         await state.clear()
         return
     
+    # Check if question requires photo
+    if question.get('question_type') == 'photo':
+        await message.answer("📷 Пожалуйста, отправьте фото, а не текст.")
+        return
+    
     # Get user ID from database
     user = get_user(message.from_user.id)
     if not user:
