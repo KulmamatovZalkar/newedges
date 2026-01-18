@@ -4,3 +4,4 @@ gunicorn>=21.0
 Pillow>=10.0
 dj-database-url>=2.0
 python-dotenv>=1.0
+whitenoise
