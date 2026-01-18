@@ -21,7 +21,10 @@ DEBUG = os.environ.get('DEBUG', '0') == '1'
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'localhost,127.0.0.1').split(',')
 
 # CSRF trusted origins (required for admin behind proxy)
-CSRF_TRUSTED_ORIGINS = os.environ.get('CSRF_TRUSTED_ORIGINS', 'http://localhost:8000,http://127.0.0.1:8000').split(',')
+CSRF_TRUSTED_ORIGINS = [
+    'https://newedgesbot.bigbee.su',
+    'http://newedgesbot.bigbee.su',
+]
 
 # Application definition
 INSTALLED_APPS = [
